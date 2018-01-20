@@ -235,10 +235,11 @@ function Users_view(
             button(page_link_to('register'), glyph('plus') . _('New user'))
         ]),
         table([
+            //column                                   lable    order by?
             'Nick'         => Users_table_header_link('Nick', _('Nick'), $order_by),
             'Vorname'      => Users_table_header_link('Vorname', _('Prename'), $order_by),
             'Name'         => Users_table_header_link('Name', _('Name'), $order_by),
-            'DECT'         => Users_table_header_link('DECT', _('DECT'), $order_by),
+            'Handy'         => Users_table_header_link('Handy', _('Handy'), $order_by),
             'Gekommen'     => Users_table_header_link('Gekommen', _('Arrived'), $order_by),
             'got_voucher'  => Users_table_header_link('got_voucher', _('Voucher'), $order_by),
             'freeloads'    => _('Freeloads'),

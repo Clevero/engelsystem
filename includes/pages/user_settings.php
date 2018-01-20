@@ -86,6 +86,9 @@ function user_settings_main($user_source, $enable_tshirt_size, $tshirt_sizes)
     }
     $user_source['Handy'] = strip_request_item('mobile', $user_source['Handy']);
     $user_source['Hometown'] = strip_request_item('hometown', $user_source['Hometown']);
+    
+    $user_source['geschlecht'] = strip_request_item('geschlecht', $user_source['geschlecht']);
+    
 
     if ($valid) {
         User_update($user_source);
@@ -207,6 +210,8 @@ function user_settings()
     global $user;
     $request = request();
     $themes = config('available_themes');
+    
+    $geschlechter = config('verfuegbare_geschlechter');
 
     $enable_tshirt_size = config('enable_tshirt_size');
     $tshirt_sizes = config('tshirt_sizes');
@@ -249,6 +254,7 @@ function user_settings()
         $buildup_start_date,
         $teardown_end_date,
         $enable_tshirt_size,
-        $tshirt_sizes
+        $tshirt_sizes,
+        $geschlechter
     );
 }

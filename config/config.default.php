@@ -43,6 +43,14 @@ return [
         '1' => 'Engelsystem dark'
     ],
 
+    // verfügbare geschlechter
+    'verfuegbare_geschlechter'        => [
+    	'2' => 'möchte ich nicht angeben',
+   	'0' => 'weiblich',
+    	'1' => 'männlich'
+    ],
+
+
     // Number of News shown on one site
     'display_news'            => 6,
 

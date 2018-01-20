@@ -19,7 +19,8 @@ function User_settings_view(
     $buildup_start_date,
     $teardown_end_date,
     $enable_tshirt_size,
-    $tshirt_sizes
+    $tshirt_sizes,
+    $geschlechter
 ) {
     return page_with_title(settings_title(), [
         msg(),
@@ -31,6 +32,7 @@ function User_settings_view(
                     form_text('nick', _('Nick'), $user_source['Nick'], true),
                     form_text('lastname', _('Last name'), $user_source['Name']),
                     form_text('prename', _('First name'), $user_source['Vorname']),
+                    form_select('geschlecht', _('Geschlecht:'), $geschlechter, $user_source['geschlecht']),
                     form_date(
                         'planned_arrival_date',
                         _('Planned date of arrival') . ' ' . entry_required(),

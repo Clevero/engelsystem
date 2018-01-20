@@ -205,7 +205,8 @@ function User_sortable_columns()
         'Aktiv',
         'force_active',
         'Tshirt',
-        'lastLogIn'
+        'lastLogIn',
+        'geschlecht'
     ];
 }
 

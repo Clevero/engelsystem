@@ -198,7 +198,7 @@ function User_sortable_columns()
         'Name',
         'Vorname',
         'Alter',
-        'DECT',
+        'Handy',
         'email',
         'Size',
         'Gekommen',

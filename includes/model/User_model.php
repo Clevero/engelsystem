@@ -83,7 +83,8 @@ function User_update($user)
           `arrival_date`=?,
           `planned_arrival_date`=?,
           `planned_departure_date`=?,
-          `geschlecht`=?
+          `geschlecht`=?,
+          `geburtsdatum`=?
           WHERE `UID`=?
         ',
         [
@@ -111,6 +112,7 @@ function User_update($user)
             $user['planned_arrival_date'],
             $user['planned_departure_date'],
             $user['geschlecht'],
+            $user['geburtsdatum'],
             $user['UID'],
         ]
     );
@@ -401,6 +403,19 @@ function User_validate_planned_departure_date($planned_arrival_date, $planned_de
         return new ValidationResult(false, $event_config['teardown_end_date']);
     }
     return new ValidationResult(true, $planned_departure_date);
+}
+
+/**
+ * Validiert das Datum des Geburtstages
+ *
+ * @param int $geburtstag   Unix timestamp
+ * @return ValidationResult
+ */
+function User_validate_geburtsdatum($geburtsdatum){
+    
+    //TODO: implementiere richtige methode...
+    return new ValidationResult(true, $geburtsdatum);
+    
 }
 
 /**

@@ -72,6 +72,18 @@ function user_settings_main($user_source, $enable_tshirt_size, $tshirt_sizes)
             error(_('Please enter your planned date of departure. It should be after your planned arrival date and after buildup start date and before teardown end date.'));
         }
     }
+    
+    if ($request->has('geburtsdatum')) {
+        $tmp = parse_date('Y-m-d H:i', $request->input('geburtsdatum') . ' 00:00');
+        $result = User_validate_geburtsdatum($tmp);
+        $user_source['geburtsdatum'] = $result->getValue();
+        
+        if (!$result->isValid()) {
+            $valid = false;
+            error(_('Bitte gebe ein dein reales Geburtsdatum ein'));
+        }
+        
+    }
 
     // Trivia
     $user_source['Name'] = strip_request_item('lastname', $user_source['Name']);
@@ -88,6 +100,7 @@ function user_settings_main($user_source, $enable_tshirt_size, $tshirt_sizes)
     $user_source['Hometown'] = strip_request_item('hometown', $user_source['Hometown']);
     
     $user_source['geschlecht'] = strip_request_item('geschlecht', $user_source['geschlecht']);
+    
     
 
     if ($valid) {

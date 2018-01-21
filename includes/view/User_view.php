@@ -34,6 +34,13 @@ function User_settings_view(
                     form_text('prename', _('First name'), $user_source['Vorname']),
                     form_select('geschlecht', _('Geschlecht:'), $geschlechter, $user_source['geschlecht']),
                     form_date(
+                        'geburtsdatum',
+                        _('Geburtsdatum:'),
+                        $user_source['geburtsdatum'],
+                        $buildup_start_date,
+                        $teardown_end_date
+                    ),
+                    form_date(
                         'planned_arrival_date',
                         _('Planned date of arrival') . ' ' . entry_required(),
                         $user_source['planned_arrival_date'],

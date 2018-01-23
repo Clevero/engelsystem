@@ -6841,6 +6841,9 @@ body {
 .panel-danger .panel-heading a {
   color: #ffffff;
 }
+.selection .checkbox {
+  display: block;
+}
 .shift-calendar {
   display: flex;
   flex-direction: row;
@@ -6970,6 +6973,18 @@ body {
   }
   75% {
     transform: rotate(0deg) translateY(0px);
+  }
+}
+@media (max-width: 525px) {
+  .col-xxs-12 {
+    float: none;
+    width: 100%;
+    position: relative;
+    left: 0;
+    right: 0;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
   }
 }
 .messages .text-danger {
